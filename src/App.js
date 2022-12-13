@@ -3,7 +3,7 @@ import About from './components/About';
 import Nav from "./components/Nav";
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
-
+import Resume from "./components/Resume";
 
 function App() {
   const [projects] = useState([
@@ -23,27 +23,35 @@ function App() {
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
 
-  const [contactSelected, setContactSelected] = useState(false);
+  const [pageSelected, setPageSelected] = useState("About");
+
+  const handleClick = (pageState) => {
+    setPageSelected(pageState)
+  }
 
   return (
+
     <div>
       <Nav
       projects={projects}
       setCurrentProject={setCurrentProject}
       currentProject={currentProject}
-      contactSelected={contactSelected}
-      setContactSelected={setContactSelected}
+      pageSelected={pageSelected}
+      setPageSelected={setPageSelected}
       ></Nav>
       <main>
-        {!contactSelected? (
-        <>
-        <Portfolio currentProject={currentProject}></Portfolio>
-        <About></About>
-        </>
-        ): (
-          <ContactForm></ContactForm>
-        )
+      {(() => {
+        switch (pageSelected) {
+          case "About":
+            return <About handleClick={handleClick} />
+          case "Contact":
+            return <ContactForm handleClick={handleClick} />
+          case "Resume":
+            return <Resume handleClick={handleClick} />
+          default:
+            return null
         }
+      })()}
       </main>
     </div>
   );

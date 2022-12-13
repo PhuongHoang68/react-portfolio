@@ -6,8 +6,8 @@ function Nav(props) {
         projects = [],
         setCurrentProject,
         currentProject,
-        setContactSelected,
-        contactSelected
+        setPageSelected,
+        pageSelected
       } = props;
 
     useEffect(()=> {
@@ -25,19 +25,19 @@ function Nav(props) {
             <nav className="">
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a href="#about" onClick={()=> setContactSelected(false)}>About Me</a>
+                        <a href="#about" onClick={()=> setPageSelected("About")}>About Me</a>
                     </li>
 
                     {projects.map((project)=> (
                         <li className={`mx-1 ${
-                            currentProject.name === project.name && !contactSelected && "navActive"
+                            currentProject.name === project.name && !pageSelected && "navActive"
                         }`} 
                         key={project.name}
                         >
                             <span
                             onClick={()=> {
                                 setCurrentProject(project);
-                                setContactSelected(false);
+                                setPageSelected(`${project.name}`);
                             }}
                             >
                                 {capitalizeFirstLetter(project.name)}
@@ -46,11 +46,11 @@ function Nav(props) {
                     ))}
 
                     <li className="mx-2">
-                        <a href="#resume">Resume</a>
+                        <a href="#resume" onClick={()=> setPageSelected("Resume")}>Resume</a>
                     </li>
-                    <li className={`mx-2 ${contactSelected && "navActive"}`}>
+                    <li className={`mx-2 ${pageSelected && "navActive"}`}>
                         <a href="#contact">
-                            <span onClick={() => setContactSelected(true)}>Contact Me</span>
+                            <span onClick={() => setPageSelected("Contact")}>Contact Me</span>
                             </a>
                     </li>
                 </ul>

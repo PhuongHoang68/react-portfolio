@@ -26,14 +26,16 @@ const PhotoList=({project}) => {
         },
     ]);
 
-    const currentPhotos = photos.filter((photo)=> photo.project === project);
+    const currentPhotos = photos.filter(
+      (photo)=> 
+      photo.project.toLowerCase() === project.split(' ')[0].toLowerCase());
 
   return (
     <div>
         <div className="flex-row">
             {currentPhotos.map((image, i)=> (
                 <img
-                src={require(`../../assets/small/${project}/${i}.jpg`).default}
+                src={require(`../../assets/small/${image.project}/${i}.jpg`)}
                 alt={image.name}
                 className="img-thumbnail mx-1"
                 key={image.name}
