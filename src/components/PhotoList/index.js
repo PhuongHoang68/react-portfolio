@@ -5,23 +5,23 @@ const PhotoList=({project}) => {
     const [photos] = useState([
         {
           name: 'run-buddy',
-          project: 'front-end',
+          project: 'Front-end',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
           
         },
         {
           name: 'note-taker',
-          project: 'front-end',
+          project: 'Front-end',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
         {
           name: 'zoo-kpr',
-          project: 'full-stack',
+          project: 'Full-stack',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
         {
             name: 'fitness tracker',
-            project: 'full-stack',
+            project: 'Full-stack',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
     ]);

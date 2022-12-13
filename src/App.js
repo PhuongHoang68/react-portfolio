@@ -7,11 +7,11 @@ function App() {
   const [projects] = useState([
   {  
     name: "front-end projects",
-    description: "Front-end back-end projects using HTML, CSS, React etc. showcasing my abilities"
+    description: "Front-end projects using HTML, CSS, React etc. showcasing my abilities"
   },
   {
     name: "back-end projects",
-    description: "Back-end back-end projects using MySQL, NoSQL, Express etc. showcasing my abilities"
+    description: "Back-end projects using MySQL, NoSQL, Express etc. showcasing my abilities"
   },
   {
     name: "full-stack projects",
