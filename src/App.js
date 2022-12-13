@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import About from './components/About';
 import Nav from "./components/Nav";
 import Portfolio from './components/Portfolio';
+import ContactForm from './components/Contact';
+
 
 function App() {
   const [projects] = useState([
@@ -21,16 +23,27 @@ function App() {
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
 
+  const [contactSelected, setContactSelected] = useState(false);
+
   return (
     <div>
       <Nav
       projects={projects}
       setCurrentProject={setCurrentProject}
       currentProject={currentProject}
+      contactSelected={contactSelected}
+      setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <About></About>
+        {!contactSelected? (
+        <>
         <Portfolio currentProject={currentProject}></Portfolio>
+        <About></About>
+        </>
+        ): (
+          <ContactForm></ContactForm>
+        )
+        }
       </main>
     </div>
   );

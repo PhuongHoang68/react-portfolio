@@ -6,6 +6,8 @@ function Nav(props) {
         projects = [],
         setCurrentProject,
         currentProject,
+        setContactSelected,
+        contactSelected
       } = props;
 
     useEffect(()=> {
@@ -23,18 +25,19 @@ function Nav(props) {
             <nav className="">
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a href="#about">About Me</a>
+                        <a href="#about" onClick={()=> setContactSelected(false)}>About Me</a>
                     </li>
 
                     {projects.map((project)=> (
                         <li className={`mx-1 ${
-                            currentProject.name === project.name && "navActive"
+                            currentProject.name === project.name && !contactSelected && "navActive"
                         }`} 
                         key={project.name}
                         >
                             <span
                             onClick={()=> {
-                                setCurrentProject(project)
+                                setCurrentProject(project);
+                                setContactSelected(false);
                             }}
                             >
                                 {capitalizeFirstLetter(project.name)}
@@ -45,8 +48,10 @@ function Nav(props) {
                     <li className="mx-2">
                         <a href="#resume">Resume</a>
                     </li>
-                    <li>
-                        <a href="#contact">Contact Me</a>
+                    <li className={`mx-2 ${contactSelected && "navActive"}`}>
+                        <a href="#contact">
+                            <span onClick={() => setContactSelected(true)}>Contact Me</span>
+                            </a>
                     </li>
                 </ul>
             </nav>
