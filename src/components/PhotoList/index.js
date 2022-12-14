@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import Modal from "../Modal";
 
 const PhotoList=({project}) => {
     const [photos] = useState([
@@ -30,14 +30,23 @@ const PhotoList=({project}) => {
       (photo)=> 
       photo.project.toLowerCase() === project.split(' ')[0].toLowerCase());
 
+    const [currentPhoto, setCurrentPhoto] = useState();
+
+    //updating current photo state
+    const toggleModal = ( image, i ) => {
+      setCurrentPhoto({...image, index:i});
+    }
+
   return (
     <div>
+        <Modal currentPhoto={currentPhoto}/>
         <div className="flex-row">
             {currentPhotos.map((image, i)=> (
                 <img
                 src={require(`../../assets/small/${image.project}/${i}.jpg`)}
                 alt={image.name}
                 className="img-thumbnail mx-1"
+                onClick={()=> toggleModal(image, i)}
                 key={image.name}
                 />
             ))}

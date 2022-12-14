@@ -49,7 +49,12 @@ function App() {
           case "Resume":
             return <Resume handleClick={handleClick} />
           default:
-            return null
+            return (
+              <Portfolio
+              handleClick={handleClick}
+              currentProject={currentProject}
+              />
+            )
         }
       })()}
       </main>
