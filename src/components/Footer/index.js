@@ -8,7 +8,7 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
             >
-                <h3><AiFillGithub /></h3>
+                <h3><AiFillGithub/></h3>
             </a>
         </footer>
     )
