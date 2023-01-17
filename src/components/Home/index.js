@@ -18,8 +18,8 @@ function Home() {
     }, []);
     return (
         <div>
-        <Container>
-            <Row className="home">
+        <Container className="home">
+            <Row>
                 <Col sm={8} className="welcome">
                     <h1 style={{fontSize: "50px"}}>Hi, I'm Phuong Hoang.</h1>
                     <br />

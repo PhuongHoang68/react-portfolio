@@ -18,7 +18,10 @@ main {
 
 }
 
-
+a, a:focus, a:active {
+  text-decoration: none !important;
+  color: goldenrod !important;
+}
 
 
 
@@ -30,7 +33,6 @@ main {
   margin-top: 35px;
 }
 .linkedin {
-  z-index: 800;
   border-radius: 50%;
 }
 /*  */
@@ -41,9 +43,8 @@ main {
 /* About-me section styling */
 .about-section {
   justify-content: center;
-  z-index: 20;
 }
-.tsparticles {
+#tsparticles {
   position: fixed;
   width: 100%;
   z-index: -1;
@@ -72,7 +73,7 @@ main {
 }
 .resume {
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #fff !important;
 }
 .contact {
   font-size: 500px;

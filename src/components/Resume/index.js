@@ -53,16 +53,8 @@ function Resume() {
             </div>
 
             <Button variant="contained" className="resume" size="large">
-            <a href="https://docdro.id/qnOyIE1">DOWNLOAD RESUME</a>
+                <a href="https://docdro.id/qnOyIE1">DOWNLOAD RESUME</a>
             </Button>
-
-            <div className="contact">
-                <h1>Contact me:</h1>
-                <p>Phone: 636-541-7008</p>
-                <p>Email:
-                <a href="mailto:p.hoang6897@yahoo.com" className="email"> p.hoang6897@yahoo.com</a>
-                </p>
-            </div>
             <Particles id="tsparticles" 
         options={{
         background: {

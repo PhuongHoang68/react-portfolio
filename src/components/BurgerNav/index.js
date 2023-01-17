@@ -8,15 +8,33 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LinkedIn from "../../assets/linkedIn/linkedIn.jpg"
 import {Link} from "react-router-dom";
 // import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'Projects', 'Resume'];
+const pages = [
+  {title: 'Home', url: '/home'},
+  {title: 'Projects', url: '/projects'}, 
+  {title: 'Resume', url: 'https://docdro.id/nFAmtak', isExternalLink: true}
+];
+
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+function MyMenuItem({title, url, onClick, isExternalLink= false}) {
+  const style = {textDecoration: "none", color: "black", fontSize: "12px" }
+  return (
+    <MenuItem onClick={onClick}>
+      <Typography textAlign="center">
+        {
+          isExternalLink 
+          ? <a href={url} style={style} target="_blank">{title}</a>
+          : <Link style={style} to={url}>{title}</Link>
+        }
+        </Typography>
+    </MenuItem>
+  )
+}
 
 function MyAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -74,15 +92,9 @@ function MyAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link style={{textDecoration: "none", color: "white" }} to={`/${page}`}>
-                    {page}
-                    </Link>
-                    </Typography>
-                </MenuItem>
-              ))}
+              {pages.map((page, index) => 
+                <MyMenuItem key={`${page.title}-${index}`} onClick={handleOpenUserMenu} {...page} />
+              )}
             </Menu>
           </Box>
            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />  */}
@@ -104,25 +116,20 @@ function MyAppBar() {
           >
             LOGO
           </Typography> */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                <Typography sx={{color: 'black'}}>
-                <Link style={{textDecoration: "none", color: "white", fontSize: "12px" }} to={`/${page}`}>
-                    {page}
-                </Link>
-                </Typography>
-              </Button>
-            ))}
+          <Box sx={{ flexGrow: 1, alignItems: 'center', display: { xs: 'none', md: 'flex' } }}>
+              {pages.map((page, index) => 
+                <MyMenuItem key={`${page.title}-${index}`} onClick={handleCloseNavMenu} {...page} />
+              )}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             
+          <a href="https://www.linkedin.com/in/phuong-hoang-a0b4901a5/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                 <Avatar alt="Phuong Hoang" src={LinkedIn} sx={{ width: 40, height: 40 }} />
+          </a>
               
             <Menu
               sx={{ mt: '45px' }}
@@ -148,6 +155,7 @@ function MyAppBar() {
             </Menu>
           </Box>
         </Toolbar>
+
       </Container>
     </AppBar>
   );
