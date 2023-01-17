@@ -18,13 +18,79 @@ main {
 
 }
 
+a, a:focus, a:active {
+  text-decoration: none !important;
+  color: goldenrod !important;
+}
+
+
+
+/* home styling */
+.home {
+  margin-top: 75px;
+}
+.welcome {
+  margin-top: 35px;
+}
+.linkedin {
+  border-radius: 50%;
+}
+/*  */
+
+
+
+
+/* About-me section styling */
+.about-section {
+  justify-content: center;
+}
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+/*  */
+
+
+
+
+
+
+/* Resume styling */
+.wrapping {
+  width: 50%;
+  background-color: #FFFFCC;
+}
+.list {
+  float: left;
+  width: 24.9%;
+  font-size: 25px;
+}
+.resume-top {
+  margin-top: 70px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.resume {
+  margin-bottom: 20px;
+  background-color: #fff !important;
+}
+.contact {
+  font-size: 500px;
+}
+/*  */
+
+
+
+
+
+
 * {
   box-sizing: border-box;
 }
-
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -33,11 +99,8 @@ body {
   font-weight: 600;
   line-height: 1.5;
   font-size: 18px;
-  letter-spacing: .1em;
   background: var(--dark);
   color: var(--light);
-  font-family: 'Poiret One', cursive;
-
 }
 
 h1,
@@ -46,7 +109,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Times', serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -181,8 +244,8 @@ textarea {
   justify-content: space-between;
 }
 
-.flex-end {
-  justify-content: flex-end;
+.navbar-nav {
+  margin-left: auto;
 }
 
 .mx-1 {
@@ -231,9 +294,10 @@ textarea {
 }
 
 .card {
-  width: 25%;
   text-align: center;
+  font-family: "Playfair Display", sans-serif;
 }
+
 
 .img-thumbnail {
   width: auto;
@@ -293,3 +357,50 @@ a {
 .navActive {
   color: var(--secondary);
 }
+
+
+
+
+
+/*footer styling*/
+.App {
+  font-family: sans-serif;
+  min-height: 100%;
+  
+}
+footer {
+  text-align: center;
+  padding-bottom: 8px;
+}
+.icon-link {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.pagewrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/*  */
+
+
+
+
+/* media queries */
+@media screen and (max-width: 770px) {
+  .home {
+    margin-top: 5px;
+    text-align: center;
+  }
+  .linkedin {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home {
+    text-align: center;
+  }
+}
+/*  */
