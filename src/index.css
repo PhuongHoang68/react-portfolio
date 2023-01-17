@@ -54,37 +54,6 @@ a, a:focus, a:active {
 
 
 
-
-
-/* Resume styling */
-.wrapping {
-  width: 50%;
-  background-color: #FFFFCC;
-}
-.list {
-  float: left;
-  width: 24.9%;
-  font-size: 25px;
-}
-.resume-top {
-  margin-top: 70px;
-  margin-bottom: 30px;
-  font-size: 25px;
-}
-.resume {
-  margin-bottom: 20px;
-  background-color: #fff !important;
-}
-.contact {
-  font-size: 500px;
-}
-/*  */
-
-
-
-
-
-
 * {
   box-sizing: border-box;
 }
@@ -363,25 +332,10 @@ a {
 
 
 /*footer styling*/
-.App {
-  font-family: sans-serif;
-  min-height: 100%;
-  
-}
-footer {
-  text-align: center;
-  padding-bottom: 8px;
-}
-.icon-link {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 .pagewrap {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 82vh;
 }
 /*  */
 
