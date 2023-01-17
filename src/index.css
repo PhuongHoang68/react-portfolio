@@ -262,10 +262,7 @@ textarea {
   padding-bottom: var(--spacing-two);
 }
 
-.card {
-  text-align: center;
-  font-family: "Playfair Display", sans-serif;
-}
+
 
 
 .img-thumbnail {

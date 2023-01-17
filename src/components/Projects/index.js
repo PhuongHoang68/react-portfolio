@@ -5,11 +5,22 @@ import Hotel from "../../assets/linkedIn/hotel.jpg"
 import Book from "../../assets/linkedIn/book.jpg"
 import ProjectCard from "../Card"
 import BackCard from "../BackCard"
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 function Projects() {
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    await loadFull(engine);
+}, []);
+
+const particlesLoaded = useCallback(async container => {
+    await console.log(container);
+}, []);
   return (
     <div>
-      <h1> Front-end projects:</h1>
+      <h1 style={{fontSize: "20px"}}> Front-end projects:</h1>
     <div style={{display: "flex", gap: "10px", justifyContent: "center", marginTop: "15px", marginBottom: "100px"}}>
       <ProjectCard 
       img={Weather}
@@ -22,22 +33,22 @@ function Projects() {
       <ProjectCard 
       img={Scheduler}
       title= "Work Day Scheduler"
-      text= {`Each block of time is one hour, and user can input their task for that hour in there. They could save that task. The hours will be color-coded, grayed out when past, red when present, and green for future.
+      text= {`Each block of time is one hour, and user can input their task for that hour in there. The hours will be color-coded, grayed out when past, red when present, and green for future.
 
-      Technologies used: HTML, CSS, JQuery, Moment.js, Javascript`}
+      Technologies used: HTML, CSS, JQuery, Moment.js, JS`}
       link= "https://github.com/PhuongHoang68/work-day-scheduler"     
       />
       <ProjectCard 
       img={Quiz}
       title= "Coding Quiz"
-      text= {`An online quiz tech students could take to prepare for their tech interviews. You will have 75 seconds to answer 5 questions. The timer counter will be displayed top right of the screen. When you get an answer wrong, the quiz will display the correct answer, and the timer will be subtracted by 10 seconds. By the end, your score is totaled. You will be asked to put in your initials, and your initials& score will be saved on the score board
+      text= {`An online quiz students could take to prepare for their tech interviews. Students get 75 seconds to answer 5 questions. Correct answers will be totaled and points displayed after.
 
       Technologies used: Javascript, HTML, CSS`}
       link= "https://github.com/PhuongHoang68/Web-API-code-quiz"     
       />
     </div>
 
-    <h1> Full-stack projects:</h1>
+    <h1 style={{fontSize: "20px"}}> Full-stack projects:</h1>
     <div style={{display: "flex", gap: "10px", justifyContent: "center", marginTop: "15px", marginBottom: "100px"}}>
       <ProjectCard 
       img={Hotel}
@@ -57,7 +68,7 @@ function Projects() {
       />
     </div>
 
-    <h1> Back-end projects:</h1>
+    <h1 style={{fontSize: "20px"}}> Back-end projects:</h1>
     <div style={{display: "flex", gap: "10px", justifyContent: "center", marginTop: "15px", marginBottom: "100px"}}>
       <BackCard 
       title= "MySQL Employee Tracker"
@@ -79,6 +90,95 @@ function Projects() {
       link= "https://github.com/PhuongHoang68/NoSQL-network-API"     
       />
       </div>
+      <Particles id="tsparticles" 
+        options={{
+        background: {
+            color: {
+                value: "#black",
+            },
+        },
+        fpsLimit: 120,
+        interactivity: {
+            detect_on: "window",
+            events: {
+                onClick: {
+                    enable: true,
+                    mode: "push",
+                },
+                
+                resize: true,
+            },
+            modes: {
+                push: {
+                    quantity: 4,
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                },
+            },
+        },
+        particles: {
+            color: {
+                value: "#ffffff",
+            },
+            links: {
+                color: "#ffffff",
+                distance: 150,
+                enable: true,
+                opacity: 0.3,
+                width: 1,
+            },
+            collisions: {
+                enable: true,
+            },
+            move: {
+                directions: "none",
+                enable: true,
+                outModes: {
+                    default: "bounce",
+                },
+                random: false,
+                speed: 6,
+                straight: false,
+                attract: {
+                  enable: false,
+                  rotateX: 600,
+                  rotateY: 1200
+              }
+            },
+            number: {
+                density: {
+                    enable: true,
+                    area: 1000,
+                },
+                value: 40,
+            },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: {
+                  enable: false,
+                  speed: 1,
+                  opacity_min: 0.1,
+                  sync: false
+                }
+            },
+            shape: {
+                type: "circle",
+                polygon: {
+                  nb_sides: 5
+              }
+            },
+            size: {
+                value: { min: 1, max: 5 },
+            },
+        },
+        detectRetina: true
+      }}
+      init={particlesInit} 
+      loaded={particlesLoaded} 
+      />
     </div>
   )
 }

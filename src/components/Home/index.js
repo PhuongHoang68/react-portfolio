@@ -85,7 +85,7 @@ function Home() {
                 directions: "none",
                 enable: true,
                 outModes: {
-                    default: "bounce",
+                    default: "out",
                 },
                 random: false,
                 speed: 6,
