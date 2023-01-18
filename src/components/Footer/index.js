@@ -33,7 +33,7 @@ function Footer() {
                     <h3 className="icon"><AiOutlineMail size="3rem"/></h3>
                     </a>
 
-                    <a href="tel:636-541-7008"
+                    <a href="tel:909-654-4515"
                         target="_blank"
                         rel="noreferrer"
                     >
