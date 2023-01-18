@@ -16,7 +16,7 @@ import {Link} from "react-router-dom";
 const pages = [
   {title: 'Home', url: '/home'},
   {title: 'Projects', url: '/projects'}, 
-  {title: 'Resume', url: 'https://docdro.id/nFAmtak', isExternalLink: true}
+  {title: 'Resume', url: 'https://docdro.id/wrrTUVH', isExternalLink: true}
 ];
 
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
