@@ -25,7 +25,17 @@ function Home() {
                     <br />
                     <h2 style={{fontSize: "20px"}}>Welcome to my portfolio page. </h2>
                     <br />
-                    <h2 style={{fontSize: "25px"}}> I'm a Full-Stack Web Developer with a Bachelors in Marketing and Biology, and a Bootcamp Graduate from WASHU! Motivated professional with an extensive record of tearmwork and leadership experience. Bi-lingual and a lifetime learner. I'm seeking a full-time position as a developer. Please check-out my projects& resume above! </h2>
+                    <h2 style={{fontSize: "25px"}}> I'm a Full-Stack Web Developer with a Bachelors in Marketing and Biology, and a Bootcamp Graduate from WASHU! Motivated professional with an extensive record of tearmwork and leadership experience. Bi-lingual and a lifetime learner.  </h2>
+                    <br />
+                    <h2 style={{fontSize: "20px"}}>Quick skills overview:
+                    <ul style={{listStyleType: "none", margin: "0", padding: "0" }}>
+                        <li>React</li>
+                        <li>MySQL</li>
+                        <li>Javascript</li>
+                        <li>MongoDB</li>
+                        <li>Node.js</li>
+                        </ul> 
+                    </h2>
                 </Col>
                 <Col sm={4}>
                     <img 
